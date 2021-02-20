@@ -30,6 +30,17 @@ class OrderLine {
 
 const order = new OrderLine(0);
 
+class Test extends React.Component{
+  constructor(props) {
+    super(props)
+  }
+  render = () => {
+    return <Text>
+      {this.props.order.price}
+    </Text>
+  }
+}
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -47,6 +58,7 @@ export default class App extends React.Component {
                 order.incrementPrice(60);
               }}
             />
+            <Test order={order} />
           </View>
         )}
       </Observer>
